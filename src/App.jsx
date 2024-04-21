@@ -29,13 +29,13 @@ const App = () => {
         <Route path='/' element={<Home/>}/>
         <Route path='/allproducts' element={<Allproducts/>}/>
         <Route path='/order' element={
-          <ProtectedRoute>
+          <ProtectedRoute allowedAccess={["admin"]}>
             <Order/>
           </ProtectedRoute>
         }/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/dashboard' element={
-          <ProtectedRouteAdmin>
+          <ProtectedRouteAdmin allowedAccess={["admin"]}>
             <Dashboard/>
           </ProtectedRouteAdmin>
         }/>
@@ -44,12 +44,12 @@ const App = () => {
         <Route path='/productinfo/:id' element={<ProductInfo/>}/>
         <Route path="/cart" element={<Cart/>} />
         <Route path="/addproduct" element={
-          <ProtectedRouteAdmin>
+          <ProtectedRouteAdmin allowedAccess={["admin"]}>
             <AddProduct/>
           </ProtectedRouteAdmin>
         } />
         <Route path="/updateproduct" element={
-          <ProtectedRouteAdmin>
+          <ProtectedRouteAdmin allowedAccess={["admin"]}>
             <UpdateProduct/>
           </ProtectedRouteAdmin>
         } />
